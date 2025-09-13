@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zoomies Design System - Purple/Indigo with Orange Accents */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors */
+    --background: 250 100% 98%;
+    --foreground: 250 15% 11%;
+    
+    /* Card & Surface Colors */
+    --card: 250 50% 95%;
+    --card-foreground: 250 15% 11%;
+    
+    /* Popover Colors */
+    --popover: 250 100% 98%;
+    --popover-foreground: 250 15% 11%;
+    
+    /* Brand Colors - Purple to Indigo Gradient Base */
+    --primary: 250 67% 31%;        /* Deep purple #3B0B92 */
+    --primary-light: 248 78% 44%;   /* Indigo #5A24E7 */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Orange Accent Colors */
+    --accent: 32 100% 50%;         /* Orange #FF8A00 */
+    --accent-light: 32 100% 63%;   /* Light orange #FFA24C */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Secondary Colors - Soft Pastels */
+    --secondary: 250 40% 92%;
+    --secondary-foreground: 250 15% 11%;
+    
+    /* Muted Colors */
+    --muted: 250 30% 90%;
+    --muted-foreground: 250 8% 45%;
+    
+    /* Destructive Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 250 30% 85%;
+    --input: 250 30% 88%;
+    --ring: 250 67% 31%;
+    
+    /* Design System Tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-card-hover: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-neumorphic: 
+      4px 4px 12px hsl(var(--primary) / 0.1),
+      -4px -4px 12px hsl(0 0% 100% / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground;
+    @apply px-6 py-3 rounded-full font-medium shadow-lg;
+    @apply hover:shadow-xl hover:scale-105 active:scale-95;
+    @apply transition-all duration-300;
+  }
+  
+  /* CTA Button with Orange Glow */
+  .btn-cta {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground;
+    @apply px-6 py-3 rounded-full font-medium;
+    @apply shadow-[0_0_20px_hsl(var(--accent)_/_0.4)];
+    @apply hover:shadow-[0_0_30px_hsl(var(--accent)_/_0.6)] hover:scale-105;
+    @apply transition-all duration-300;
+  }
+  
+  /* Card Variants */
+  .card-neumorphic {
+    @apply bg-gradient-to-br from-card to-secondary;
+    @apply rounded-2xl p-6;
+    box-shadow: var(--shadow-neumorphic);
+    @apply hover:shadow-[6px_6px_16px_hsl(var(--primary)_/_0.12),-6px_-6px_16px_hsl(0_0%_100%_/_0.9)];
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover {
+    box-shadow: var(--shadow-card);
+    @apply hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1;
+    @apply transition-all duration-300;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .text-accent-gradient {
+    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
+  }
+  
+  /* Chip/Badge Variants */
+  .chip-streak {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .chip-badge {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
