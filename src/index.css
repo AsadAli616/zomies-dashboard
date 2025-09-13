@@ -80,6 +80,64 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+        --background: 248 100% 99%;
+          --foreground: 263 70% 15%;
+        
+          /* Primary Purple Gradient System */
+          --primary: 263 70% 50%;
+          --primary-foreground: 0 0% 100%;
+          --primary-glow: 270 100% 80%;
+          --primary-deep: 263 70% 25%;
+        
+          /* Orange Accent System */
+          --accent-orange: 25 95% 53%;
+          --accent-orange-light: 25 100% 85%;
+          --accent-orange-glow: 25 95% 70%;
+        
+          /* Card System - Neumorphic Style */
+          --card: 260 60% 97%;
+          --card-foreground: 263 70% 15%;
+          --card-shadow: 260 30% 85%;
+          --card-highlight: 260 100% 99%;
+        
+          /* Sidebar System */
+          --sidebar-background: 263 70% 25%;
+          --sidebar-foreground: 260 30% 90%;
+          --sidebar-accent: 25 95% 53%;
+          --sidebar-hover: 270 60% 40%;
+        
+          /* Gradients */
+          --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(270 80% 60%));
+          --gradient-sidebar: linear-gradient(180deg, hsl(263 70% 25%), hsl(270 60% 35%));
+          --gradient-card: linear-gradient(145deg, hsl(260 60% 97%), hsl(260 50% 95%));
+          --gradient-orange: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 100% 60%));
+        
+          /* Shadows - Neumorphic */
+          --shadow-neumorphic: 8px 8px 16px hsl(260 30% 85%), -8px -8px 16px hsl(260 100% 99%);
+          --shadow-card: 0 4px 20px hsl(260 30% 85% / 0.3);
+          --shadow-glow: 0 0 30px hsl(270 100% 80% / 0.4);
+        
+          /* Animation Variables */
+          --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+          /* Secondary & Muted */
+          --secondary: 270 40% 85%;
+          --secondary-foreground: 263 70% 25%;
+          --muted: 260 30% 92%;
+          --muted-foreground: 263 40% 45%;
+        
+          /* Interactive Elements */
+          --border: 260 30% 90%;
+          --input: 260 30% 95%;
+          --ring: 263 70% 50%;
+          --radius: 0.75rem;
+        
+          /* Popover & UI Elements */
+          --popover: 260 60% 97%;
+          --popover-foreground: 263 70% 15%;
+          --destructive: 0 84% 60%;
+          --destructive-foreground: 0 0% 100%;
   }
 
   .dark {
@@ -118,6 +176,13 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+        /* Dark mode - keeping it minimal for now */
+          --background: 263 70% 8%;
+          --foreground: 260 30% 95%;
+          --card: 263 50% 12%;
+          --card-foreground: 260 30% 90%;
+          --sidebar-background: 263 70% 5%;
+          --sidebar-foreground: 260 30% 85%;
   }
 }
 
@@ -183,5 +248,49 @@
   .chip-badge {
     @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground;
     @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+@layer base {
+
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom Utility Classes */
+  .neumorphic {
+    box-shadow: var(--shadow-neumorphic);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-orange {
+    background: var(--gradient-orange);
   }
 }
