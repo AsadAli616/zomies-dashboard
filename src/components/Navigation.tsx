@@ -12,13 +12,13 @@ import foxMascot from "@/assets/fox-mascot.png";
 
 const Navigation = () => {
   const navItems = [
-    { name: "Home", path: "/student", icon: Home },
-    { name: "Quizzes", path: "/student/quizzes", icon: Zap },
-    { name: "Notes", path: "/student/notes", icon: FileText },
-    { name: "Performance", path: "/student/performance", icon: BarChart3 },
-    { name: "Flashcards", path: "/student/flashcards", icon: BookOpen },
-    { name: "Billing", path: "/student/billing", icon: CreditCard },
-    { name: "Profile", path: "/student/profile", icon: User },
+    { name: "Home", path: "/", icon: Home },
+    { name: "Quizzes", path: "/quizzes", icon: Zap },
+    { name: "Notes", path: "/notes", icon: FileText },
+    { name: "Performance", path: "/performance", icon: BarChart3 },
+    { name: "Flashcards", path: "/flashcards", icon: BookOpen },
+    { name: "Billing", path: "/billing", icon: CreditCard },
+    { name: "Profile", path: "/profile", icon: User },
   ];
 
   return (

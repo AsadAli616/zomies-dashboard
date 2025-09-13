@@ -27,13 +27,13 @@ function AppRoutes() {
 
   // Routes where Navigation should be visible
   const showNavigationRoutes = [
-    "/student",
-    "/student/quizzes",
-    "/student/notes",
-    "/student/performance",
-    "/student/billing",
-    "/student/profile",
-    "/student/flashcards",
+    "/",
+    "/quizzes",
+    "/notes",
+    "/performance",
+    "/billing",
+    "/profile",
+    "/flashcards",
   ];
 
   const showNavigation = showNavigationRoutes.includes(location.pathname);
@@ -44,15 +44,14 @@ function AppRoutes() {
       <Routes>
         {/* <Route path="/" element={<LandingPage />} />
         <Route path="/pricing" element={<PricingPage />} /> */}
-        <Route path="/student" element={<Index />} />
-        <Route path="/student" element={<Index />} />
-        <Route path="/student" element={<Index />} />
-        <Route path="/student/quizzes" element={<Quizzes />} />
-        <Route path="/student/notes" element={<Notes />} />
-        <Route path="/student/performance" element={<Performance />} />
-        <Route path="/student/flashcards" element={<Flashcards />} />
-        <Route path="/student/billing" element={<Billing />} />
-        <Route path="/student/profile" element={<Profile />} />
+        <Route path="/" element={<Index />} />
+
+        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="/performance" element={<Performance />} />
+        <Route path="/flashcards" element={<Flashcards />} />
+        <Route path="/billing" element={<Billing />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/teacher" element={<Dashboard />} />
         <Route path="/teacher/students" element={<Students />} />
         <Route path="/teacher/notes" element={<TeacherNotes />} />
